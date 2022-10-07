@@ -2,12 +2,7 @@ import './App.css';
 import Timer from './Components/Timer';
 import MatchContainer from './Components/MatchContainer';
 import Teams from './Components/Teams';
-import MatchContextProvider from './Contexts/MatchContext';
-
-const match = {
-  homeScore: 0,
-  awayScore: 0
-};
+import MatchContextProvider from './Contexts/MatchContext'; 
 
 function App() {
   return (
