@@ -32,7 +32,7 @@ const Timer = () => {
             }
     
             secondHalf = true;
-        }, 11000);
+        }, 20000);
     }
     function showStartSecondHalfButton() {
         var secondHalfButton = document.getElementById('start-second-half');

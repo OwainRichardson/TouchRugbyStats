@@ -1,5 +1,7 @@
-import MainMatchFrame from '../MainMatchFrame';
-import PlayerFrame from '../PlayerFrame';
+import MainMatchFrame from '../Frames/MainMatchFrame';
+import PlayerFrame from '../Frames/PlayerFrame';
+import PenaltyFrame from '../Frames/PenaltyFrame';
+import TurnoverFrame from '../Frames/TurnoverFrame';
 import './index.css';
 
 const MatchContainer = () => {
@@ -7,6 +9,8 @@ const MatchContainer = () => {
         <div className="frame-container">
             <MainMatchFrame />
             <PlayerFrame />
+            <PenaltyFrame />
+            <TurnoverFrame />
         </div>
     );
 };

@@ -7,6 +7,7 @@ export function useMatchContext() {
 }
 
 const MatchContextProvider = (props) => {
+    const [history, setHistory] = useState([]);
     const [homeScore, setHomeScore] = useState(0);
     const [awayScore, setAwayScore] = useState(0);
     const [possession, setPossession] = useState('home');
@@ -25,7 +26,11 @@ const MatchContextProvider = (props) => {
                 homeSets,
                 setHomeSets,
                 awaySets,
-                setAwaySets
+                setAwaySets,
+                history,
+                setHistory,
+                homeTeam: 'wildcats',
+                awayTeam: 'saxons'
             }}>
                {props.children}
          </MatchContext.Provider>
