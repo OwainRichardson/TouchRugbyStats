@@ -16,12 +16,12 @@ const PlayerFrame = () => {
             setHomeScore(homeScore + 1);
             setPossession('away');
             setAwaySets(awaySets + 1);
-            setHistory([...history, { scorer: event.target.innerText, time: time, team: homeTeam}]);
+            setHistory([...history, { action: 'try scored', scorer: event.target.innerText, time: time, team: homeTeam}]);
         } else {
             setAwayScore(awayScore + 1);
             setPossession('home');
             setHomeSets(homeSets + 1);
-            setHistory([...history, { scorer: event.target.innerText, time: time, team: awayTeam}]);
+            setHistory([...history, { action: 'try scored', scorer: event.target.innerText, time: time, team: awayTeam}]);
         }
 
         showMainMatchFrame();

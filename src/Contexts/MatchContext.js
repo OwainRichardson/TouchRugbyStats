@@ -13,6 +13,8 @@ const MatchContextProvider = (props) => {
     const [possession, setPossession] = useState('home');
     const [homeSets, setHomeSets] = useState(0);
     const [awaySets, setAwaySets] = useState(0);
+    const [homeCompletedSets, setHomeCompletedSets] = useState(0);
+    const [awayCompletedSets, setAwayCompletedSets] = useState(0);
     
     return (
          <MatchContext.Provider 
@@ -29,8 +31,12 @@ const MatchContextProvider = (props) => {
                 setAwaySets,
                 history,
                 setHistory,
-                homeTeam: 'wildcats',
-                awayTeam: 'saxons'
+                homeTeam: 'Wildcats',
+                awayTeam: 'Saxons',
+                homeCompletedSets,
+                setHomeCompletedSets,
+                awayCompletedSets,
+                setAwayCompletedSets
             }}>
                {props.children}
          </MatchContext.Provider>

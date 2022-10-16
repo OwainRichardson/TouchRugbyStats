@@ -24,11 +24,11 @@ const TurnoverFrame = () => {
 
         if (possession === 'home') {
             setAwaySets(awaySets + 1);
-            setHistory([...history, { turnover: turnoverType, time: time, team: homeTeam }]);
+            setHistory([...history, { action: turnoverType, time: time, team: homeTeam }]);
             setPossession('away');
         } else {
             setHomeSets(homeSets + 1);
-            setHistory([...history, { turnover: turnoverType, time: time, team: awayTeam }]);
+            setHistory([...history, { action: turnoverType, time: time, team: awayTeam }]);
             setPossession('home');
         }
 
