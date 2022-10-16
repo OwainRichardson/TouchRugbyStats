@@ -1,6 +1,7 @@
 import MatchButton from '../../MatchButton';
 import { showMainMatchFrame, getTime } from '../../../Functions/MatchFrameFunctions';
 import { useMatchContext } from '../../../Contexts/MatchContext';
+import { penalties } from './penalties';
 
 const PenaltyFrame = () => {
     const { homeSets, setHomeSets, awaySets, setAwaySets, possession, history, setHistory,
@@ -37,8 +38,13 @@ const PenaltyFrame = () => {
     return (
         <div className="hidden match-frame" id="penalty-frame">
             <div id="penalties">
-                <MatchButton buttonText='Hard touch' clickFunction={showPitchArea} buttonInfo='nonTurnover' />
-                <MatchButton buttonText='Poor ruck' clickFunction={showPitchArea} buttonInfo='turnover' />
+                {
+                    penalties.map((penalty, index) => {
+                        return (
+                            <MatchButton key={index} buttonText={penalty} clickFunction={showPitchArea} />
+                        );
+                    })
+                }
             </div>
             <div className="hidden" id="pitch-area">
                 <MatchButton buttonText='Goal <-> 7m' clickFunction={handlePenalty} />

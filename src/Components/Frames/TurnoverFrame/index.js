@@ -1,7 +1,62 @@
+import MatchButton from '../../MatchButton';
+import { showMainMatchFrame, getTime } from '../../../Functions/MatchFrameFunctions';
+import { useMatchContext } from '../../../Contexts/MatchContext';
+import { turnovers } from './turnovers';
+
 const TurnoverFrame = () => {
-    <div class="match-frame" id="turnover-frame">
-        <p>Turnover frame</p>
-    </div>
+    const { homeSets, setHomeSets, awaySets, setAwaySets, possession, setPossession, history, setHistory,
+        homeTeam, awayTeam } = useMatchContext();
+
+    let turnoverType = '';
+
+    function showPitchArea(event) {
+        const button = event.currentTarget;
+        turnoverType = button.innerText;
+
+        let penalties = document.getElementById('turnovers');
+        let pitchArea = document.getElementById('pitch-area-turnovers');
+        penalties.classList.toggle('hidden');
+        pitchArea.classList.toggle('hidden');
+    }
+
+    function handleTurnover() {
+        const time = getTime();
+
+        if (possession === 'home') {
+            setAwaySets(awaySets + 1);
+            setHistory([...history, { turnover: turnoverType, time: time, team: homeTeam }]);
+            setPossession('away');
+        } else {
+            setHomeSets(homeSets + 1);
+            setHistory([...history, { turnover: turnoverType, time: time, team: awayTeam }]);
+            setPossession('home');
+        }
+
+        turnoverType = '';
+
+        showMainMatchFrame();
+    }
+
+    return (
+        <div className="hidden match-frame" id="turnover-frame">
+            <div id="turnovers">
+                {
+                    turnovers.map((turnover, index) => {
+                        return (
+                            <MatchButton key={index} buttonText={turnover} clickFunction={showPitchArea} />
+                        );
+                    })
+                }
+            </div>
+            <div className="hidden" id="pitch-area-turnovers">
+                <MatchButton buttonText='Goal <-> 7m' clickFunction={handleTurnover} />
+                <MatchButton buttonText='7m <-> 10m' clickFunction={handleTurnover} />
+                <MatchButton buttonText='10m <-> 10m' clickFunction={handleTurnover} />
+                <MatchButton buttonText='10m <-> 7m' clickFunction={handleTurnover} />
+                <MatchButton buttonText='7m <-> Goal' clickFunction={handleTurnover} />
+            </div>
+        </div>
+    );
 };
 
 export default TurnoverFrame;
