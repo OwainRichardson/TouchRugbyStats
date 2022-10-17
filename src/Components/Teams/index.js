@@ -3,7 +3,7 @@ import { useMatchContext } from '../../Contexts/MatchContext';
 import { useEffect } from 'react';
 
 const Teams = () => {
-    const { homeScore, awayScore, possession, homeSets, awaySets } = useMatchContext();
+    const { homeScore, awayScore, possession, homeTeam, awayTeam } = useMatchContext();
 
     useEffect(() => {
         let homeTeamName = document.querySelector('.team-name.home');
@@ -20,10 +20,10 @@ const Teams = () => {
 
     return (
         <div className="team-container">
-            <div className="team home wildcats"><span className="team-name home">Wildcats</span> ({homeSets})</div>
+            <div className="team home wildcats"><span className="team-name home">{homeTeam}</span></div>
             <div className="score home wildcats">{homeScore}</div>
             <div className="score away saxons">{awayScore}</div>
-            <div className="team away saxons"><span className="team-name away">Saxons ({awaySets})</span></div>
+            <div className="team away saxons"><span className="team-name away">{awayTeam}</span></div>
         </div>
     );
 };

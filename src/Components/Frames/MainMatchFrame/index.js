@@ -1,14 +1,27 @@
 import MatchButton from '../../MatchButton';
-import { showPlayerFrame, showPenaltyFrame, showTurnoverFrame } from '../../../Functions/MatchFrameFunctions';
+import { showPlayerFrame, showPenaltyFrame, showTurnoverFrame, getTime } from '../../../Functions/MatchFrameFunctions';
 import { useMatchContext } from '../../../Contexts/MatchContext';
 
 const MainMatchFrame = () => {
 
-    const { homeScore, setHomeScore, awayScore, setAwayScore, possession, 
-        setPossession, homeSets, setHomeSets, awaySets, setAwaySets,
-        history, setHistory, homeTeam, awayTeam } = useMatchContext();
+    const { possession, setPossession, homeSets, setHomeSets, awaySets, setAwaySets,
+        history, setHistory, homeTeam, awayTeam, homeCompletedSets, setHomeCompletedSets,
+        awayCompletedSets, setAwayCompletedSets } = useMatchContext();
+    
     function completeSet() {
-        
+        const time = getTime();
+
+        if (possession === 'home') {
+            setHomeCompletedSets(homeCompletedSets + 1);
+            setHistory([...history, { action: 'completedSet', time: time, team: homeTeam }]);
+            setAwaySets(awaySets + 1);
+            setPossession('away');
+        } else {
+            setAwayCompletedSets(awayCompletedSets + 1);
+            setHistory([...history, { action: 'completedSet', time: time, team: awayTeam }]);
+            setHomeSets(homeSets + 1);
+            setPossession('home');
+        }     
     }
 
     return (

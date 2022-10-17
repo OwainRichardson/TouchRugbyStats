@@ -24,10 +24,10 @@ const PenaltyFrame = () => {
 
         if (possession === 'home') {
             setHomeSets(homeSets + 1);
-            setHistory([...history, { penalty: penaltyType, time: time, team: awayTeam, turnover: false }]);
+            setHistory([...history, { action: penaltyType, time: time, team: awayTeam, turnover: false }]);
         } else {
             setAwaySets(awaySets + 1);
-            setHistory([...history, { penalty: penaltyType, time: time, team: homeTeam, turnover: false }]);
+            setHistory([...history, { action: penaltyType, time: time, team: homeTeam, turnover: false }]);
         }
 
         penaltyType = '';
