@@ -21,7 +21,7 @@ const Teams = () => {
     return (
         <div className="team-container">
             <div className="team home wildcats"><span className="team-name home">{homeTeam}</span></div>
-            <div className="score home wildcats" id="home-score">{homeScore}</div>
+            <div className="score home wildcats home-score" id="home-score">{homeScore}</div>
             <div className="score away saxons">{awayScore}</div>
             <div className="team away saxons"><span className="team-name away">{awayTeam}</span></div>
         </div>
