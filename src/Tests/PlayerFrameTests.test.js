@@ -4,14 +4,10 @@ import MatchContainer from "../Components/MatchContainer";
 import Timer from "../Components/Timer";
 import Teams from "../Components/Teams";
 
-const matchContext = {
-    homeScore: 0
-};
 
 test("Try scored for home team adds 1 to home team score", () => {
-    
     render(
-        <MatchContextProvider value={matchContext}>
+        <MatchContextProvider>
             <Timer />
             <Teams />
             <MatchContainer />    
@@ -24,5 +20,6 @@ test("Try scored for home team adds 1 to home team score", () => {
     const scorer = screen.getByText('Owain');
     fireEvent.click(scorer);
 
-    expect(matchContext.homeScore).toBe(1);
+    const homeScore = screen.getByTestId('home-score');
+    expect(homeScore.innerText).toBe('1');
 });

@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext } from 'react'
 
-const MatchContext = createContext({})
+export const MatchContext = createContext({})
 
 export function useMatchContext() {
     return useContext(MatchContext);

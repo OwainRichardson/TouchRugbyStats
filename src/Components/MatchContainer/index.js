@@ -12,7 +12,6 @@ const MatchContainer = () => {
             <PlayerFrame />
             <PenaltyFrame />
             <TurnoverFrame />
-            <Reporting />
         </div>
     );
 };
