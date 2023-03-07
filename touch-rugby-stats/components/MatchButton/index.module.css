@@ -1,0 +1,12 @@
+.match-button {
+    display: inline-block;
+    width: 30%;
+    padding: 20px;
+}
+
+.match-button__content {
+    background-color: maroon;
+    color: white;
+    cursor: pointer;
+    padding: 30px 0;
+}

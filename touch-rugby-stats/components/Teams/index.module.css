@@ -1,0 +1,32 @@
+.team-container {
+    width: 100%;
+}
+
+.team {
+    width: 40%;
+    display: inline-block;  
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 500;
+}
+
+.wildcats {
+    background-color: orange;
+    color: black;
+}
+
+.saxons {
+    background-color: blue;
+    color: white;
+}
+.score {
+    width: 10%;
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 500;
+}
+
+.in-possession::after {
+    content: "*";
+}
