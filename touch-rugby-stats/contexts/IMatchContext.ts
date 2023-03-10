@@ -23,4 +23,8 @@ export interface IMatchContext {
     setSeconds(arg: string): void;
     displayedFrame: 'main' | 'player' | 'penalty' | 'turnover';
     setDisplayedFrame(arg: 'main' | 'player' | 'penalty' | 'turnover'): void;
+    homePenalties: number;
+    setHomePenalties(arg: number): void;
+    awayPenalties: number;
+    setAwayPenalties(arg: number): void;
 }

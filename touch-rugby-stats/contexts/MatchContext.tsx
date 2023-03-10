@@ -25,7 +25,11 @@ export const MatchContext = createContext<IMatchContext>({
     seconds: '00',
     setSeconds: () => null,
     displayedFrame: 'main',
-    setDisplayedFrame: () => null
+    setDisplayedFrame: () => null,
+    homePenalties: 0,
+    setHomePenalties: () => null,
+    awayPenalties: 0,
+    setAwayPenalties: () => null
 });
 
 export function useMatchContext() {
@@ -44,6 +48,8 @@ const MatchContextProvider = (props: any) => {
     const [awayTeam, setAwayTeam] = useState('Saxons');
     const [minutes, setMinutes] = useState('00');
     const [seconds, setSeconds] = useState('00');
+    const [homePenalties, setHomePenalties] = useState(0);
+    const [awayPenalties, setAwayPenalties] = useState(0);
     const [displayedFrame, setDisplayedFrame] = useState<'main' | 'player' | 'penalty' | 'turnover'>('main');
     
     return (
@@ -72,7 +78,11 @@ const MatchContextProvider = (props: any) => {
                 seconds,
                 setSeconds,
                 displayedFrame,
-                setDisplayedFrame
+                setDisplayedFrame,
+                homePenalties,
+                setHomePenalties,
+                awayPenalties,
+                setAwayPenalties
             }}>
                {props.children}
          </MatchContext.Provider>

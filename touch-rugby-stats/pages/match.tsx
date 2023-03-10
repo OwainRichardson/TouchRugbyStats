@@ -3,7 +3,7 @@ import MatchContainer from '../components/MatchContainer';
 import Teams from '../components/Teams';
 import MatchContextProvider from '../contexts/MatchContext'; 
 import { useState } from 'react'
-import Reporting from '../components/Reporting';
+import Statistics from '../components/Statistics';
 
 function Match() {
   return (
@@ -13,7 +13,7 @@ function Match() {
           <Timer />
           <Teams />
           <MatchContainer />  
-          <Reporting />
+          <Statistics />
         </MatchContextProvider>
       </header>
     </div>

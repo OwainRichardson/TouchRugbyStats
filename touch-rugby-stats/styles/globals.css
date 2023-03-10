@@ -37,7 +37,6 @@ a {
 
 .match-frame {
   margin: auto;
-  width: 50%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -131,4 +130,23 @@ a {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+/* STATISTICS */
+.statistics-container {
+  width: 75%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.report-field {
+  width: 100%;
+}
+
+.report-value, .report-label {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
 }

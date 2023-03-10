@@ -3,7 +3,8 @@ import { useMatchContext } from '../../../contexts/MatchContext';
 import { penalties } from './penalties';
 
 const PenaltyFrame = () => {
-    const { homeSets, setHomeSets, awaySets, setAwaySets, possession, setDisplayedFrame } = useMatchContext();
+    const { homeSets, setHomeSets, awaySets, setAwaySets, possession, setDisplayedFrame,
+                homePenalties, setHomePenalties, awayPenalties, setAwayPenalties } = useMatchContext();
 
     let penaltyType = '';
 
@@ -22,8 +23,10 @@ const PenaltyFrame = () => {
 
         if (possession === 'home') {
             setHomeSets(homeSets + 1);
+            setAwayPenalties(awayPenalties + 1);
         } else {
             setAwaySets(awaySets + 1);
+            setHomePenalties(homePenalties + 1);
         }
 
         penaltyType = '';
