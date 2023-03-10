@@ -27,7 +27,7 @@ const PlayerFrame = () => {
     
     if (possession === 'home') {
         return (
-            <div className="match-frame hidden" id="player-frame">
+            <div className="match-frame" id="player-frame">
                 {homePlayers.map((player, index) => (
                     <MatchButton key={index} buttonText={player.name} clickFunction={() => homePlayerSelected()} />
                 ))}
@@ -37,7 +37,7 @@ const PlayerFrame = () => {
 
     if (possession === 'away') {
         return (
-            <div className="match-frame hidden" id="player-frame">
+            <div className="match-frame" id="player-frame">
                 {awayPlayers.map((player, index) => (
                     <MatchButton key={index} buttonText={player.name} clickFunction={() => awayPlayerSelected()} />
                 ))}

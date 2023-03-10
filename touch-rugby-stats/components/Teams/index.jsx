@@ -1,7 +1,5 @@
-import './index.module.css';
 import { useMatchContext } from '../../contexts/MatchContext';
 import { useEffect } from 'react';
-import styles from './index.module.css';
 
 const Teams = () => {
     const { homeScore, awayScore, possession, homeTeam, awayTeam } = useMatchContext();
@@ -20,11 +18,11 @@ const Teams = () => {
     }, [possession]);
 
     return (
-        <div className={styles['team-container']}>
-            <div className={`${styles['team']} ${styles['home']} ${styles['wildcats']}`}><span className={`${styles['team-name']} ${styles['home']}`} id="team-name-home">{homeTeam}</span></div>
-            <div className={`${styles['score']} ${styles['home']} ${styles['wildcats']} ${styles['home-score']}`}>{homeScore}</div>
-            <div className={`${styles['score']} ${styles['away']} ${styles['saxons']}`}>{awayScore}</div>
-            <div className={`${styles['team']} ${styles['away']} ${styles['saxons']}`}><span className={`${styles['team-name']} ${styles['away']}`} id="team-name-away">{awayTeam}</span></div>
+        <div className="team-container">
+            <div className="team home wildcats"><span className="team-name home" id="team-name-home">{homeTeam}</span></div>
+            <div className="score home wildcats home-score">{homeScore}</div>
+            <div className="score away saxons away-score">{awayScore}</div>
+            <div className="team away saxons"><span className="team-name away" id="team-name-away">{awayTeam}</span></div>
         </div>
     );
 };

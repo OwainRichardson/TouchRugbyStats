@@ -41,7 +41,7 @@ const MatchContextProvider = (props: any) => {
     const [homeCompletedSets, setHomeCompletedSets] = useState(0);
     const [awayCompletedSets, setAwayCompletedSets] = useState(0);
     const [homeTeam, setHomeTeam] = useState('Wildcats');
-    const [awayTeam, setAwayTeam] = useState('Wildcats');
+    const [awayTeam, setAwayTeam] = useState('Saxons');
     const [minutes, setMinutes] = useState('00');
     const [seconds, setSeconds] = useState('00');
     const [displayedFrame, setDisplayedFrame] = useState<'main' | 'player' | 'penalty' | 'turnover'>('main');

@@ -2,14 +2,13 @@ import MainMatchFrame from '../Frames/MainMatchFrame';
 import PlayerFrame from '../Frames/PlayerFrame';
 import PenaltyFrame from '../Frames/PenaltyFrame';
 import TurnoverFrame from '../Frames/TurnoverFrame';
-import styles from './index.module.css';
 import { useMatchContext } from '../../contexts/MatchContext';
 
 const MatchContainer = () => {
     const { displayedFrame } = useMatchContext();
 
     return (
-        <div className={styles['frame-container']}>
+        <div className="frame-container">
             { displayedFrame === 'main' ? <MainMatchFrame /> :
                 displayedFrame === 'player' ? <PlayerFrame /> :
                 displayedFrame === 'penalty' ? <PenaltyFrame /> :

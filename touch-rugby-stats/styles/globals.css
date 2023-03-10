@@ -26,5 +26,109 @@ a {
 }
 
 .hidden { 
-  display: none;
+  display: none !important;
+}
+
+/* FRAMES */
+.frame-container {
+  width: 75%;
+  margin: auto;
+}
+
+.match-frame {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* TIMER */
+.timer-container {
+  width: 100%;
+  text-align: center;
+}
+
+#timer-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 30px 0;
+  cursor: pointer;
+  height: 40px;
+}
+
+#timer-display {
+  margin: 30px 0;
+  height: 40px;
+}
+
+/* TEAMS */
+.team-container {
+  width: 100%;
+}
+
+.team {
+  width: 40%;
+  display: inline-block;  
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.wildcats {
+  background-color: orange;
+  color: black;
+}
+
+.saxons {
+  background-color: blue;
+  color: white;
+}
+.score {
+  width: 10%;
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.in-possession::after {
+  content: "*";
+}
+
+/* MATCH BUTTON */
+.match-button {
+  width: 30%;
+  margin-top: 30px;
+}
+
+.match-button__content {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  padding: 30px 0;
+  text-align: center;
+}
+
+/* PENALTIES */
+#penalties, #pitch-area {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* TURNOVERS */ 
+#turnovers, #pitch-area-turnovers {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

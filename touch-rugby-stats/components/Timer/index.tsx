@@ -1,12 +1,14 @@
 import { useMatchContext } from '../../contexts/MatchContext';
 
-// ToDo: Put timer in to useState and then in to the context
-
 const Timer = () => {
     const { possession, homeSets, setHomeSets, awaySets, setAwaySets, minutes, setMinutes, seconds, setSeconds } = useMatchContext();
     
     function startTimer(event: any) {
-        event.target.classList.add('hidden');
+        const timerButton = document.getElementById('timer-button');
+        timerButton?.classList.add('hidden');
+
+        const timerDisplay = document.getElementById('timer-display')
+        timerDisplay?.classList.remove('hidden');
 
         if (possession === 'home') {
             setHomeSets(homeSets + 1);
@@ -23,19 +25,19 @@ const Timer = () => {
     
         var timer = setInterval(function () {
             setSeconds(pad(++sec % 60));
-            setMinutes(pad(sec / 60));
+            setMinutes(pad(Math.floor(sec / 60)));
         }, 1000);
     
         setTimeout(function () {
             clearInterval(timer);
             secondHalf = true;
-        }, 60000);
+        }, 130000);
     }
 
     return (
-        <div>
-            <h2><span id="minutes">{minutes}</span>:<span id="seconds">{seconds}</span></h2>
-            <input type="button" onClick={startTimer} value="Start timer" />
+        <div className="timer-container">
+            <h2 id="timer-display" className="hidden"><span id="minutes">{minutes}</span>:<span id="seconds">{seconds}</span></h2>
+            <input type="button" id="timer-button" onClick={startTimer} value="Kick off" />
         </div>
     );
 };
