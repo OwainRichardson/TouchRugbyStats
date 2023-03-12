@@ -1,7 +1,8 @@
+import { match } from 'assert';
 import { useMatchContext } from '../../contexts/MatchContext';
 
 const Timer = () => {
-    const { possession, homeSets, setHomeSets, awaySets, setAwaySets, minutes, setMinutes, seconds, setSeconds } = useMatchContext();
+    const { possession, homeSets, setHomeSets, awaySets, setAwaySets, minutes, setMinutes, seconds, setSeconds, matchLengthSeconds } = useMatchContext();
     
     function startTimer(event: any) {
         const timerButton = document.getElementById('timer-button');
@@ -17,7 +18,6 @@ const Timer = () => {
         }
 
         var sec:number = 0;
-        var secondHalf = false;
 
         function pad(val: number): string {
             return val > 9 ? `${val}` : `0${val}`;
@@ -30,8 +30,7 @@ const Timer = () => {
     
         setTimeout(function () {
             clearInterval(timer);
-            secondHalf = true;
-        }, 130000);
+        }, matchLengthSeconds * 1000);
     }
 
     return (

@@ -139,6 +139,7 @@ a {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 .report-field {
@@ -149,4 +150,36 @@ a {
   display: inline-block;
   width: 33%;
   text-align: center;
+  margin: 0;
+  padding: 16px 0;
+}
+
+.report-label {
+  background-color: lightgrey;
+}
+
+/* TIMELINE */
+.timeline-container {
+  width: 75%;
+  margin: auto;
+}
+
+.timeline {
+  width: 100%;
+  height: 3px;
+  position: relative;
+}
+
+.timeline > .home {
+  bottom: 3px;
+  height: 25px;
+  width: 3px;
+  position: absolute;
+}
+
+.timeline > .away {
+  top: 3px;
+  height: 25px;
+  width: 3px;
+  position: absolute;
 }

@@ -1,9 +1,11 @@
+import { IMatchEvent } from './IMatchEvent';
+
 export interface IMatchContext {
     homeScore: number;
     setHomeScore(arg: number): void;
     awayScore: number;
     setAwayScore(arg: number): void;
-    possession: string;
+    possession: 'home' | 'away';
     setPossession(arg: string): void;
     homeSets: number;
     setHomeSets(arg: number): void;
@@ -27,4 +29,7 @@ export interface IMatchContext {
     setHomePenalties(arg: number): void;
     awayPenalties: number;
     setAwayPenalties(arg: number): void;
+    matchEvents: IMatchEvent[];
+    setMatchEvents(arg: IMatchEvent[]): void;
+    matchLengthSeconds: number;
 }
