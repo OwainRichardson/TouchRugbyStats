@@ -34,6 +34,10 @@ const MainMatchFrame = () => {
                 <MatchButton buttonText='Turnover' clickFunction={() => setDisplayedFrame('turnover')} />
             </div>
         )
+    } else {
+        return (
+            <div></div>
+        );
     };
 };
 
