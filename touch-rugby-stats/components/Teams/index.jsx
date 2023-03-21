@@ -19,10 +19,10 @@ const Teams = () => {
 
     return (
         <div className="team-container">
-            <div className="team home wildcats"><span className="team-name home" id="team-name-home">{homeTeam}</span></div>
-            <div className="score home wildcats home-score">{homeScore}</div>
-            <div className="score away saxons away-score">{awayScore}</div>
-            <div className="team away saxons"><span className="team-name away" id="team-name-away">{awayTeam}</span></div>
+            <div className={`team home ${homeTeam.toLowerCase()}`}><span className="team-name home" id="team-name-home">{homeTeam}</span></div>
+            <div className={`score home ${homeTeam.toLowerCase()} home-score`}>{homeScore}</div>
+            <div className={`score away ${awayTeam.toLowerCase()} away-score`}>{awayScore}</div>
+            <div className={`team away ${awayTeam.toLowerCase()}`}><span className="team-name away" id="team-name-away">{awayTeam}</span></div>
         </div>
     );
 };

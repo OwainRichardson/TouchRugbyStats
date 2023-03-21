@@ -19,7 +19,7 @@ export const MatchContext = createContext<IMatchContext>({
     setAwayCompletedSets: () => null,
     homeTeam: 'Wildcats',
     setHomeTeam: () => null,
-    awayTeam: 'Saxons',
+    awayTeam: 'Taipains',
     setAwayTeam: () => null,
     minutes: '00',
     setMinutes: () => null,
@@ -33,7 +33,11 @@ export const MatchContext = createContext<IMatchContext>({
     setAwayPenalties: () => null,
     matchEvents: [] as IMatchEvent[],
     setMatchEvents: (matchEvents: IMatchEvent[]) => {},
-    matchLengthSeconds: 600
+    matchLengthSeconds: 600,
+    matchInProgress: false,
+    setMatchInProgress: () => null,
+    teamInPossession: 'wildcats',
+    setTeamInPossession: () => null
 });
 
 export function useMatchContext() {
@@ -57,6 +61,8 @@ const MatchContextProvider = (props: any) => {
     const [displayedFrame, setDisplayedFrame] = useState<'main' | 'player' | 'penalty' | 'turnover'>('main');
     const [matchEvents, setMatchEvents] = useState([]);
     const matchLengthSeconds = 600;
+    const [matchInProgress, setMatchInProgress] = useState(false);
+    const [teamInPossession, setTeamInPossession] = useState('wildcats');
     return (
          <MatchContext.Provider 
             value={{
@@ -90,7 +96,11 @@ const MatchContextProvider = (props: any) => {
                 setAwayPenalties,
                 matchEvents,
                 setMatchEvents,
-                matchLengthSeconds
+                matchLengthSeconds,
+                matchInProgress,
+                setMatchInProgress,
+                teamInPossession,
+                setTeamInPossession
             }}>
                {props.children}
          </MatchContext.Provider>

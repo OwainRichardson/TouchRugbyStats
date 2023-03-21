@@ -32,4 +32,8 @@ export interface IMatchContext {
     matchEvents: IMatchEvent[];
     setMatchEvents(arg: IMatchEvent[]): void;
     matchLengthSeconds: number;
+    matchInProgress: boolean;
+    setMatchInProgress(arg: boolean): void;
+    teamInPossession: string;
+    setTeamInPossession(arg: string): void;
 }

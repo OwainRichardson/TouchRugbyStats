@@ -6,13 +6,15 @@ const PlayerFrame = () => {
 
     const { homeScore, setHomeScore, awayScore, setAwayScore, possession,
                 setPossession, homeSets, setHomeSets, awaySets, setAwaySets,
-                setDisplayedFrame, matchEvents, setMatchEvents, minutes, seconds } = useMatchContext();
+                setDisplayedFrame, matchEvents, setMatchEvents, minutes, seconds,
+                homeTeam, awayTeam, setTeamInPossession } = useMatchContext();
 
 
     function homePlayerSelected() {
         // const time = getTime();
         setHomeScore(homeScore + 1);
         setPossession('away');
+        setTeamInPossession(awayTeam.toLowerCase());
         setAwaySets(awaySets + 1);
         setDisplayedFrame('main');
 
@@ -24,6 +26,7 @@ const PlayerFrame = () => {
         // const time = getTime();
         setAwayScore(awayScore + 1);
         setPossession('home');
+        setTeamInPossession(homeTeam.toLowerCase());
         setHomeSets(homeSets + 1);
         setDisplayedFrame('main');
 

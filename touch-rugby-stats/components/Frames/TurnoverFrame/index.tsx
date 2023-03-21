@@ -3,7 +3,8 @@ import { useMatchContext } from '../../../contexts/MatchContext';
 import { turnovers } from './turnovers';
 
 const TurnoverFrame = () => {
-    const { homeSets, setHomeSets, awaySets, setAwaySets, possession, setPossession, setDisplayedFrame } = useMatchContext();
+    const { homeSets, setHomeSets, awaySets, setAwaySets, possession, setPossession, setDisplayedFrame,
+        homeTeam, awayTeam, setTeamInPossession } = useMatchContext();
 
     let turnoverType = '';
 
@@ -23,9 +24,11 @@ const TurnoverFrame = () => {
         if (possession === 'home') {
             setAwaySets(awaySets + 1);
             setPossession('away');
+            setTeamInPossession(awayTeam.toLowerCase());
         } else {
             setHomeSets(homeSets + 1);
             setPossession('home');
+            setTeamInPossession(homeTeam.toLowerCase());
         }
 
         turnoverType = '';

@@ -89,6 +89,12 @@ a {
   background-color: blue;
   color: white;
 }
+
+.taipains {
+  background-color: red;
+  color: white;
+}
+
 .score {
   width: 10%;
   display: inline-block;
@@ -109,8 +115,6 @@ a {
 }
 
 .match-button__content {
-  background-color: #4caf50;
-  color: white;
   cursor: pointer;
   padding: 30px 0;
   text-align: center;

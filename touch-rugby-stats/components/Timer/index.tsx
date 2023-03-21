@@ -2,9 +2,11 @@ import { match } from 'assert';
 import { useMatchContext } from '../../contexts/MatchContext';
 
 const Timer = () => {
-    const { possession, homeSets, setHomeSets, awaySets, setAwaySets, minutes, setMinutes, seconds, setSeconds, matchLengthSeconds } = useMatchContext();
+    const { possession, homeSets, setHomeSets, awaySets, setAwaySets, minutes, setMinutes, seconds, setSeconds, matchLengthSeconds, setMatchInProgress } = useMatchContext();
     
     function startTimer(event: any) {
+        setMatchInProgress(true);
+
         const timerButton = document.getElementById('timer-button');
         timerButton?.classList.add('hidden');
 

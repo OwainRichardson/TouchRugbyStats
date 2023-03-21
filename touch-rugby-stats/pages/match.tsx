@@ -13,7 +13,6 @@ function Match() {
           <Timer />
           <Teams />
           <MatchContainer />  
-          <Statistics />
         </MatchContextProvider>
       </header>
     </div>
