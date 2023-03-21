@@ -1,7 +1,7 @@
-import MatchContextProvider, { useMatchContext } from '../../../contexts/MatchContext';
+import MatchContextProvider, { useMatchContext } from '../contexts/MatchContext';
 import { render, screen, fireEvent } from '@testing-library/react';
-import PlayerFrame from './index';
-import { IMatchContext } from '../../../contexts/IMatchContext';
+import PlayerFrame from '../components/Frames/PlayerFrame/index';
+import { IMatchContext } from '../contexts/IMatchContext';
 
 describe("Given a user views the players component", () => {
     describe("when the user clicks a home player", () => {

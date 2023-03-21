@@ -38,7 +38,7 @@ const MainMatchFrame = () => {
         return (
             <div></div>
         );
-    };
+    }
 };
 
 export default MainMatchFrame;

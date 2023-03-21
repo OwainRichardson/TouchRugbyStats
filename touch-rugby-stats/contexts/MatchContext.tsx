@@ -52,8 +52,8 @@ const MatchContextProvider = (props: any) => {
     const [awaySets, setAwaySets] = useState(0);
     const [homeCompletedSets, setHomeCompletedSets] = useState(0);
     const [awayCompletedSets, setAwayCompletedSets] = useState(0);
-    const [homeTeam, setHomeTeam] = useState('Wildcats');
-    const [awayTeam, setAwayTeam] = useState('Saxons');
+    const [homeTeam, setHomeTeam] = useState(props.hometeam ?? 'Wildcats');
+    const [awayTeam, setAwayTeam] = useState(props.awayTeam ?? 'Saxons');
     const [minutes, setMinutes] = useState('00');
     const [seconds, setSeconds] = useState('00');
     const [homePenalties, setHomePenalties] = useState(0);
@@ -61,7 +61,7 @@ const MatchContextProvider = (props: any) => {
     const [displayedFrame, setDisplayedFrame] = useState<'main' | 'player' | 'penalty' | 'turnover'>('main');
     const [matchEvents, setMatchEvents] = useState([]);
     const matchLengthSeconds = 600;
-    const [matchInProgress, setMatchInProgress] = useState(false);
+    const [matchInProgress, setMatchInProgress] = useState(props.matchInProgess ?? false);
     const [teamInPossession, setTeamInPossession] = useState('wildcats');
     return (
          <MatchContext.Provider 

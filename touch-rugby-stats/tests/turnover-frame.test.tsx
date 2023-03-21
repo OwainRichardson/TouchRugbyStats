@@ -1,7 +1,7 @@
-import MatchContextProvider, { useMatchContext } from '../../../contexts/MatchContext';
+import MatchContextProvider, { useMatchContext } from '../contexts/MatchContext';
 import { render, screen, fireEvent } from '@testing-library/react';
-import TurnoverFrame from './index';
-import { IMatchContext } from '../../../contexts/IMatchContext';
+import TurnoverFrame from '../components/Frames/TurnoverFrame/index';
+import { IMatchContext } from '../contexts/IMatchContext';
 
 describe("Given a user views the penalty component", () => {
     describe("when the home team has possession", () => {
