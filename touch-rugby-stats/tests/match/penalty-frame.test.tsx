@@ -1,55 +1,19 @@
-import MatchContextProvider, { useMatchContext } from '../contexts/MatchContext';
+import MatchContextProvider, { useMatchContext } from '../../pages/match/context/MatchContext';
 import { render, screen, fireEvent } from '@testing-library/react';
-import TurnoverFrame from '../components/Frames/TurnoverFrame/index';
-import { IMatchContext } from '../contexts/IMatchContext';
+import PenaltyFrame from '../../pages/match/components/Frames/PenaltyFrame/index';
+import { IMatchContext } from '../../pages/match/context/IMatchContext';
 
 describe("Given a user views the penalty component", () => {
     describe("when the home team has possession", () => {
-        it("should increment the away sets by 1", async () => {            
-            render (
-                <MatchContextProvider>
-                    <TurnoverFrame />
-                    <TestDisplayComponent />    
-                </MatchContextProvider>
-            );
-
-            const penalty = screen.getByText('Late pass');
-            fireEvent.click(penalty);
-
-            const area = screen.getByText('Goal <-> 7m');
-            fireEvent.click(area);
-
-            expect((await screen.findByTestId('away-sets')).textContent).toBe('1');
-        });
-
-        it("should transfer possession to away", async () => {            
-            render (
-                <MatchContextProvider>
-                    <TurnoverFrame />
-                    <TestDisplayComponent />    
-                </MatchContextProvider>
-            );
-
-            const penalty = screen.getByText('Late pass');
-            fireEvent.click(penalty);
-
-            const area = screen.getByText('Goal <-> 7m');
-            fireEvent.click(area);
-
-            expect((await screen.findByTestId('possession')).textContent).toBe('away');
-        });
-    });
-
-    describe("when the away team has possession", () => {
         it("should increment the home sets by 1", async () => {            
             render (
-                <MatchContextProvider possession='away'>
-                    <TurnoverFrame />
+                <MatchContextProvider>
+                    <PenaltyFrame />
                     <TestDisplayComponent />    
                 </MatchContextProvider>
             );
 
-            const penalty = screen.getByText('Late pass');
+            const penalty = screen.getByText('Offside');
             fireEvent.click(penalty);
 
             const area = screen.getByText('Goal <-> 7m');
@@ -58,21 +22,57 @@ describe("Given a user views the penalty component", () => {
             expect((await screen.findByTestId('home-sets')).textContent).toBe('1');
         });
 
-        it("should transfer possession to home", async () => {            
+        it ("should increment the away penalties by 1", async () => {
             render (
-                <MatchContextProvider possession='away'>
-                    <TurnoverFrame />
+                <MatchContextProvider>
+                    <PenaltyFrame />
                     <TestDisplayComponent />    
                 </MatchContextProvider>
             );
 
-            const penalty = screen.getByText('Late pass');
+            const penalty = screen.getByText('Offside');
             fireEvent.click(penalty);
 
             const area = screen.getByText('Goal <-> 7m');
             fireEvent.click(area);
 
-            expect((await screen.findByTestId('possession')).textContent).toBe('home');
+            expect((await screen.findByTestId('away-penalties')).textContent).toBe('1');
+        });
+    });
+
+    describe("when the away team has possession", () => {
+        it("should increment the away sets by 1", async () => {            
+            render (
+                <MatchContextProvider possession='away'>
+                    <PenaltyFrame />
+                    <TestDisplayComponent />    
+                </MatchContextProvider>
+            );
+
+            const penalty = screen.getByText('Offside');
+            fireEvent.click(penalty);
+
+            const area = screen.getByText('Goal <-> 7m');
+            fireEvent.click(area);
+
+            expect((await screen.findByTestId('away-sets')).textContent).toBe('1');
+        });
+
+        it ("should increment the away penalties by 1", async () => {
+            render (
+                <MatchContextProvider possession='away'>
+                    <PenaltyFrame />
+                    <TestDisplayComponent />    
+                </MatchContextProvider>
+            );
+
+            const penalty = screen.getByText('Offside');
+            fireEvent.click(penalty);
+
+            const area = screen.getByText('Goal <-> 7m');
+            fireEvent.click(area);
+
+            expect((await screen.findByTestId('home-penalties')).textContent).toBe('1');
         });
     });
 });
@@ -84,7 +84,8 @@ function TestDisplayComponent (){
         <div>
             <div data-testid="home-sets">{data.homeSets}</div>
             <div data-testid="away-sets">{data.awaySets}</div>
-            <div data-testid="possession">{data.possession}</div>
+            <div data-testid="home-penalties">{data.homePenalties}</div>
+            <div data-testid="away-penalties">{data.awayPenalties}</div>
         </div>
     );
 };

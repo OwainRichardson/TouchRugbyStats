@@ -1,6 +1,6 @@
 import { match } from 'assert';
 import { useEffect } from 'react';
-import { useMatchContext } from '../../contexts/MatchContext';
+import { useMatchContext } from '../../context/MatchContext';
 
 const Timeline = () => {
     const { homeTeam, awayTeam, matchEvents, matchLengthSeconds } = useMatchContext();

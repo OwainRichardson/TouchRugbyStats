@@ -1,7 +1,7 @@
-import MatchContextProvider, { useMatchContext } from '../contexts/MatchContext';
+import MatchContextProvider, { useMatchContext } from '../../pages/match/context/MatchContext';
 import { render, screen, fireEvent } from '@testing-library/react';
-import PlayerFrame from '../components/Frames/PlayerFrame/index';
-import { IMatchContext } from '../contexts/IMatchContext';
+import PlayerFrame from '../../pages/match/components/Frames/PlayerFrame/index';
+import { IMatchContext } from '../../pages/match/context/IMatchContext';
 
 describe("Given a user views the players component", () => {
     describe("when the user clicks a home player", () => {
@@ -92,6 +92,19 @@ describe("Given a user views the players component", () => {
             fireEvent.click(scorer);
 
             expect((await screen.findByTestId('home-sets')).textContent).toBe('1');
+        });
+    });
+
+    describe("when possession is not set correctly", () => {
+        it("should display a message saying it doesn't know who has the ball", async () => {
+            render (
+                <MatchContextProvider possession='unknown'>
+                    <PlayerFrame />
+                    <TestDisplayComponent />    
+                </MatchContextProvider>
+            );
+
+            expect(await screen.findAllByText('Could not work out who is in possession. unknown')).toHaveLength(1);
         });
     });
 });

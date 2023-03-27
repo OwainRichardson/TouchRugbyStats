@@ -2,7 +2,7 @@ import MainMatchFrame from '../Frames/MainMatchFrame';
 import PlayerFrame from '../Frames/PlayerFrame';
 import PenaltyFrame from '../Frames/PenaltyFrame';
 import TurnoverFrame from '../Frames/TurnoverFrame';
-import { useMatchContext } from '../../contexts/MatchContext';
+import { useMatchContext } from '../../context/MatchContext';
 
 const MatchContainer = () => {
     const { displayedFrame } = useMatchContext();

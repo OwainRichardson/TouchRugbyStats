@@ -1,5 +1,5 @@
 import { match } from 'assert';
-import { useMatchContext } from '../../contexts/MatchContext';
+import { useMatchContext } from '../../context/MatchContext';
 
 const Timer = () => {
     const { possession, homeSets, setHomeSets, awaySets, setAwaySets, minutes, setMinutes, seconds, setSeconds, matchLengthSeconds, setMatchInProgress } = useMatchContext();

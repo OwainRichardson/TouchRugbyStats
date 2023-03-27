@@ -1,5 +1,5 @@
 import MatchButton from '../../MatchButton';
-import { useMatchContext } from '../../../contexts/MatchContext';
+import { useMatchContext } from '../../../context/MatchContext';
 
 const MainMatchFrame = () => {
 
@@ -36,7 +36,7 @@ const MainMatchFrame = () => {
         )
     } else {
         return (
-            <div></div>
+            <div>Kick off to start the match</div>
         );
     }
 };

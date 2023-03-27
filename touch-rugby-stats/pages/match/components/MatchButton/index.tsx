@@ -1,4 +1,4 @@
-import { useMatchContext } from '../../contexts/MatchContext';
+import { useMatchContext } from '../../context/MatchContext';
 
 const MatchButton = (params: any) => {
 

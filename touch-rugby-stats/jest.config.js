@@ -10,7 +10,12 @@ module.exports = {
       '!<rootDir>/out/**',
       '!<rootDir>/.next/**',
       '!<rootDir>/*.config.js',
+      '!<rootDir>/config/*.setup.js',
       '!<rootDir>/coverage/**',
+      '!<rootDir>/pages/match/index.tsx',
+      '!<rootDir>/pages/match/context/**',
+      '!<rootDir>/pages/index.tsx',
+      '!<rootDir>/pages/_app.tsx'
     ],
     moduleNameMapper: {
       // Handle CSS imports (with CSS modules)
@@ -31,7 +36,7 @@ module.exports = {
     // setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
     testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
     testEnvironment: 'jsdom',
-    testMatch: ['**/tests/*.tsx'],
+    testMatch: ['**/tests/**/*.tsx'],
     transform: {
       // Use babel-jest to transpile tests with the next/babel preset
       // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
@@ -39,6 +44,6 @@ module.exports = {
     },
     transformIgnorePatterns: [
       '/node_modules/',
-      '^.+\\.module\\.(css|sass|scss)$',
+      '^.+\\.module\\.(css|sass|scss)$'
     ],
   }
