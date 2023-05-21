@@ -9,8 +9,6 @@ D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats\bin\Debug\n
 D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats\bin\Debug\net6.0\TouchRugbyStats.Models.dll
-D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats\bin\Debug\net6.0\TouchRugbyStats.Models.pdb
 D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats\obj\Debug\net6.0\TouchRugbyStats.csproj.AssemblyReference.cache
 D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats\obj\Debug\net6.0\TouchRugbyStats.GeneratedMSBuildEditorConfig.editorconfig
 D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats\obj\Debug\net6.0\TouchRugbyStats.AssemblyInfoInputs.cache

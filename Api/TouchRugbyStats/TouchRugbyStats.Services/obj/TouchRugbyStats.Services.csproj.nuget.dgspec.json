@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Code\\Projects\\TouchRugbyStats\\Api\\TouchRugbyStats\\TouchRugbyStats\\TouchRugbyStats.csproj": {}
+    "D:\\Code\\Projects\\TouchRugbyStats\\Api\\TouchRugbyStats\\TouchRugbyStats.Services\\TouchRugbyStats.Services.csproj": {}
   },
   "projects": {
-    "D:\\Code\\Projects\\TouchRugbyStats\\Api\\TouchRugbyStats\\TouchRugbyStats\\TouchRugbyStats.csproj": {
+    "D:\\Code\\Projects\\TouchRugbyStats\\Api\\TouchRugbyStats\\TouchRugbyStats.Services\\TouchRugbyStats.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\Projects\\TouchRugbyStats\\Api\\TouchRugbyStats\\TouchRugbyStats\\TouchRugbyStats.csproj",
-        "projectName": "TouchRugbyStats",
-        "projectPath": "D:\\Code\\Projects\\TouchRugbyStats\\Api\\TouchRugbyStats\\TouchRugbyStats\\TouchRugbyStats.csproj",
+        "projectUniqueName": "D:\\Code\\Projects\\TouchRugbyStats\\Api\\TouchRugbyStats\\TouchRugbyStats.Services\\TouchRugbyStats.Services.csproj",
+        "projectName": "TouchRugbyStats.Services",
+        "projectPath": "D:\\Code\\Projects\\TouchRugbyStats\\Api\\TouchRugbyStats\\TouchRugbyStats.Services\\TouchRugbyStats.Services.csproj",
         "packagesPath": "C:\\Users\\owain\\.nuget\\packages\\",
-        "outputPath": "D:\\Code\\Projects\\TouchRugbyStats\\Api\\TouchRugbyStats\\TouchRugbyStats\\obj\\",
+        "outputPath": "D:\\Code\\Projects\\TouchRugbyStats\\Api\\TouchRugbyStats\\TouchRugbyStats.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\owain\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,24 +39,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "HotChocolate": {
-              "target": "Package",
-              "version": "[13.0.5, )"
-            },
-            "HotChocolate.AspNetCore": {
-              "target": "Package",
-              "version": "[13.0.5, )"
-            },
-            "HotChocolate.Data": {
-              "target": "Package",
-              "version": "[13.0.5, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.2.3, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -69,9 +51,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

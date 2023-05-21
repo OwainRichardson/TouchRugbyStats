@@ -1,4 +1,5 @@
 using TouchRugbyStats.Models.GraqhQL;
+using TouchRugbyStats.Services.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,9 +9,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSingleton<TeamService>();
+
 builder.Services.AddGraphQLServer()
-                .AddQueryType<Query>()
-                .AddFiltering();
+            .AddQueryType<Query>()
+            .AddFiltering();
 
 var app = builder.Build();
 

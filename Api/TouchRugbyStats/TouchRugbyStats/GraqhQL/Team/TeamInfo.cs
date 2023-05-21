@@ -1,4 +1,4 @@
-﻿namespace TouchRugbyStats.Models.Team
+﻿namespace TouchRugbyStats.GraqhQL.Team
 {
     public class TeamInfo
     {

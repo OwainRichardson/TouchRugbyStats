@@ -1,7 +1,7 @@
-﻿using TouchRugbyStats.Models.Match;
-using TouchRugbyStats.Models.Team;
+﻿using TouchRugbyStats.GraqhQL.Match;
+using TouchRugbyStats.GraqhQL.Team;
 
-namespace TouchRugbyStats.Models.Data
+namespace TouchRugbyStats.Data
 {
     public static class TestData
     {

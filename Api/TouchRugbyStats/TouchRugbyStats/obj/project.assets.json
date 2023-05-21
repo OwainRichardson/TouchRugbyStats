@@ -772,20 +772,6 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
-      },
-      "TouchRugbyStats.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "HotChocolate.Abstractions": "13.0.5",
-          "HotChocolate.Data": "13.0.5"
-        },
-        "compile": {
-          "bin/placeholder/TouchRugbyStats.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/TouchRugbyStats.Models.dll": {}
-        }
       }
     }
   },
@@ -1896,11 +1882,6 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "TouchRugbyStats.Models/1.0.0": {
-      "type": "project",
-      "path": "../TouchRugbyStats.Models/TouchRugbyStats.Models.csproj",
-      "msbuildProject": "../TouchRugbyStats.Models/TouchRugbyStats.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1908,8 +1889,7 @@
       "HotChocolate >= 13.0.5",
       "HotChocolate.AspNetCore >= 13.0.5",
       "HotChocolate.Data >= 13.0.5",
-      "Swashbuckle.AspNetCore >= 6.2.3",
-      "TouchRugbyStats.Models >= 1.0.0"
+      "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
   "packageFolders": {
@@ -1938,11 +1918,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "D:\\Code\\Projects\\TouchRugbyStats\\Api\\TouchRugbyStats\\TouchRugbyStats.Models\\TouchRugbyStats.Models.csproj": {
-              "projectPath": "D:\\Code\\Projects\\TouchRugbyStats\\Api\\TouchRugbyStats\\TouchRugbyStats.Models\\TouchRugbyStats.Models.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
