@@ -1,5 +1,4 @@
-﻿using TouchRugbyStats.GraqhQL.Match;
-using TouchRugbyStats.GraqhQL.Team;
+﻿using TouchRugbyStats.GraqhQL;
 
 namespace TouchRugbyStats.Data
 {

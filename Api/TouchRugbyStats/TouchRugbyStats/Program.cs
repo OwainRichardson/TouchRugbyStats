@@ -1,4 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using TouchRugbyStats.Contexts;
 using TouchRugbyStats.Models.GraqhQL;
+using TouchRugbyStats.Services;
 using TouchRugbyStats.Services.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +13,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<TeamService>();
+builder.Services.AddDbContext<TouchRugbyStatsContext>(options => options.UseSqlServer("Server=.;Database=TouchRugbyStats;User Id=sa;Password=Megame29!;TrustServerCertificate=True;"));
+builder.Services.AddScoped<TeamService>();
+builder.Services.AddScoped<MatchService>();
+builder.Services.AddScoped<TournamentService>();
 
 builder.Services.AddGraphQLServer()
             .AddQueryType<Query>()

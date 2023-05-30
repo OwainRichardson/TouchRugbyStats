@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using TouchRugbyStats.Data;
-using TouchRugbyStats.GraqhQL.Match;
+using TouchRugbyStats.GraqhQL;
 
 namespace TouchRugbyStats.Controllers
 {

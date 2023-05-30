@@ -1,5 +1,0 @@
-D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats.Services\obj\Debug\net6.0\TouchRugbyStats.Services.csproj.AssemblyReference.cache
-D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats.Services\obj\Debug\net6.0\TouchRugbyStats.Services.GeneratedMSBuildEditorConfig.editorconfig
-D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats.Services\obj\Debug\net6.0\TouchRugbyStats.Services.AssemblyInfoInputs.cache
-D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats.Services\obj\Debug\net6.0\TouchRugbyStats.Services.AssemblyInfo.cs
-D:\Code\Projects\TouchRugbyStats\Api\TouchRugbyStats\TouchRugbyStats.Services\obj\Debug\net6.0\TouchRugbyStats.Services.csproj.CoreCompileInputs.cache
