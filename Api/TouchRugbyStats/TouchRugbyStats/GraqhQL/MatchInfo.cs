@@ -1,5 +1,4 @@
-﻿using TouchRugbyStats.Data;
-using TouchRugbyStats.Services.Services;
+﻿using TouchRugbyStats.Services.Services;
 
 namespace TouchRugbyStats.GraqhQL
 {
