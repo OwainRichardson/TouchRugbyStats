@@ -15,7 +15,16 @@ namespace TouchRugbyStats.Services
         public MatchInfo GetMatch(Guid matchId)
         {
             return _touchRugbyStatsContext.Matches
-                            .Select(match => MapMatch(match))
+                            .Select(match => new MatchInfo
+                            {
+                                Id = match.Id,
+                                AwayTeamId = match.AwayTeamId,
+                                HomeTeamId = match.HomeTeamId,
+                                TournamentId = match.TournamentId,
+                                StartTime = match.StartTime,
+                                HomeScore = match.HomeScore,
+                                AwayScore = match.AwayScore
+                            })
                             .Single(match => match.Id == matchId);
         }
 
@@ -23,22 +32,17 @@ namespace TouchRugbyStats.Services
         {
             return _touchRugbyStatsContext.Matches
                         .Where(match => match.TournamentId == tournamentId)
-                        .Select(match => MapMatch(match))
+                        .Select(match => new MatchInfo
+                        {
+                            Id = match.Id,
+                            AwayTeamId = match.AwayTeamId,
+                            HomeTeamId = match.HomeTeamId,
+                            TournamentId = match.TournamentId,
+                            StartTime = match.StartTime,
+                            HomeScore = match.HomeScore,
+                            AwayScore = match.AwayScore
+                        })
                         .ToList();
-        }
-
-        private static MatchInfo MapMatch(Match match)
-        {
-            return new MatchInfo
-            {
-                Id = match.Id,
-                AwayTeamId = match.AwayTeamId,
-                HomeTeamId = match.HomeTeamId,
-                TournamentId = match.TournamentId,
-                StartTime = match.StartTime,
-                HomeScore = match.HomeScore,
-                AwayScore = match.AwayScore
-            };
         }
     }
 }

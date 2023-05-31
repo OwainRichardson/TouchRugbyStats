@@ -22,5 +22,16 @@ namespace TouchRugbyStats.Services
                         })
                         .Single(tourament => tourament.Id == tournamentId);
         }
+
+        internal List<TournamentInfo> GetTournaments()
+        {
+            return _touchRugbyStatsContext.Tournaments
+                        .Select(tournament => new TournamentInfo
+                        {
+                            Id = tournament.Id,
+                            Name = tournament.Name
+                        })
+                        .ToList();
+        }
     }
 }
