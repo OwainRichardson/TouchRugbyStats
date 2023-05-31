@@ -6,7 +6,7 @@ const PlayerFrame = () => {
 
     const { homeScore, setHomeScore, awayScore, setAwayScore, possession,
                 setPossession, homeSets, setHomeSets, awaySets, setAwaySets,
-                setDisplayedFrame, matchEvents, setMatchEvents, minutes, seconds,
+                setDisplayedFrame, minutes, seconds,
                 homeTeam, awayTeam, setTeamInPossession } = useMatchContext();
 
 
@@ -19,7 +19,6 @@ const PlayerFrame = () => {
         setDisplayedFrame('main');
 
         const timestamp = (parseInt(minutes) * 60) + parseInt(seconds);
-        setMatchEvents([...matchEvents, { eventType: 'try', possession: possession, timestamp: timestamp }])
     }
 
     function awayPlayerSelected() {
@@ -31,7 +30,6 @@ const PlayerFrame = () => {
         setDisplayedFrame('main');
 
         const timestamp = (parseInt(minutes) * 60) + parseInt(seconds);
-        setMatchEvents([...matchEvents, { eventType: 'try', possession: possession, timestamp: timestamp }])
     }
     
     if (possession === 'home') {

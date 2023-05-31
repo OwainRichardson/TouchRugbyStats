@@ -1,5 +1,3 @@
-import { IMatchEvent } from './IMatchEvent';
-
 export interface IMatchContext {
     homeScore: number;
     setHomeScore(arg: number): void;
@@ -29,8 +27,6 @@ export interface IMatchContext {
     setHomePenalties(arg: number): void;
     awayPenalties: number;
     setAwayPenalties(arg: number): void;
-    matchEvents: IMatchEvent[];
-    setMatchEvents(arg: IMatchEvent[]): void;
     matchLengthSeconds: number;
     matchInProgress: boolean;
     setMatchInProgress(arg: boolean): void;

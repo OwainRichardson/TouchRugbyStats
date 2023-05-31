@@ -1,7 +1,7 @@
-import Timer from './components/Timer';
-import MatchContainer from './components/MatchContainer';
-import Teams from './components/Teams';
-import MatchContextProvider from './context/MatchContext'; 
+import Timer from '../../components/Timer';
+import MatchContainer from '../../components/MatchContainer';
+import Teams from '../../components/Teams';
+import MatchContextProvider from '../../context/MatchContext'; 
 
 function Match() {
 

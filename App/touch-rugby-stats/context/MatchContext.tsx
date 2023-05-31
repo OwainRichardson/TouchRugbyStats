@@ -1,6 +1,5 @@
 import React, { createContext, useState, useContext } from 'react'
 import { IMatchContext } from './IMatchContext';
-import { IMatchEvent } from './IMatchEvent';
 
 export const MatchContext = createContext<IMatchContext>({
     homeScore: 0,
@@ -31,8 +30,6 @@ export const MatchContext = createContext<IMatchContext>({
     setHomePenalties: () => null,
     awayPenalties: 0,
     setAwayPenalties: () => null,
-    matchEvents: [] as IMatchEvent[],
-    setMatchEvents: (matchEvents: IMatchEvent[]) => {},
     matchLengthSeconds: 600,
     matchInProgress: false,
     setMatchInProgress: () => null,
@@ -94,8 +91,6 @@ const MatchContextProvider = (props: any) => {
                 setHomePenalties,
                 awayPenalties,
                 setAwayPenalties,
-                matchEvents,
-                setMatchEvents,
                 matchLengthSeconds,
                 matchInProgress,
                 setMatchInProgress,

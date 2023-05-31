@@ -3,7 +3,7 @@ import Timeline from './timeline';
 
 const Statistics = () => {
     const { homeScore, awayScore, homeTeam, awayTeam, homeSets, awaySets, homeCompletedSets, 
-                awayCompletedSets, homePenalties, awayPenalties, matchEvents } = useMatchContext();
+                awayCompletedSets, homePenalties, awayPenalties } = useMatchContext();
 
     return (
         <div>
