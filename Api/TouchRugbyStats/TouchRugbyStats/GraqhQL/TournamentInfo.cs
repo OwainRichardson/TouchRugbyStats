@@ -10,5 +10,10 @@ namespace TouchRugbyStats.GraqhQL
         {
             return matchService.GetMatches(parent.Id);
         }
+
+        public MatchInfo GetMatch([GraphQLType(typeof(IdType))] Guid matchId, [Service] MatchService matchService)
+        {
+            return matchService.GetMatch(matchId);
+        }
     }
 }
