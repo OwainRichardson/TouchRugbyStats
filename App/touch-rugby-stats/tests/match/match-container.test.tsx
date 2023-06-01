@@ -1,6 +1,6 @@
-import MatchContextProvider from '../../pages/match/context/MatchContext';
+import MatchContextProvider from '../../pages/tournament/[tournamentId]/match/context/MatchContext';
 import { render, screen, fireEvent } from '@testing-library/react';
-import MatchContainer from '../../pages/match/components/MatchContainer';
+import MatchContainer from '../../pages/tournament/[tournamentId]/match/components/MatchContainer';
 import '@testing-library/jest-dom';
 
 describe("Given a user views the main match component", () => {

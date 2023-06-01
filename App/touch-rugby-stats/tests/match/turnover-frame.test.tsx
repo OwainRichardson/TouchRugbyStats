@@ -1,7 +1,7 @@
-import MatchContextProvider, { useMatchContext } from '../../pages/match/context/MatchContext';
+import MatchContextProvider, { useMatchContext } from '../../pages/tournament/[tournamentId]/match/context/MatchContext';
 import { render, screen, fireEvent } from '@testing-library/react';
-import TurnoverFrame from '../../pages/match/components/Frames/TurnoverFrame/index';
-import { IMatchContext } from '../../pages/match/context/IMatchContext';
+import TurnoverFrame from '../../pages/tournament/[tournamentId]/match/components/Frames/TurnoverFrame/index';
+import { IMatchContext } from '../../pages/tournament/[tournamentId]/match/context/IMatchContext';
 
 describe("Given a user views the penalty component", () => {
     describe("when the home team has possession", () => {

@@ -1,6 +1,6 @@
-import MatchContextProvider, { useMatchContext } from '../../pages/match/context/MatchContext';
+import MatchContextProvider, { useMatchContext } from '../../pages/tournament/[tournamentId]/match/context/MatchContext';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Teams from '../../pages/match/components/Teams';
+import Teams from '../../pages/tournament/[tournamentId]/match/components/Teams';
 
 describe("Given a user views the teams component", () => {
     describe("when the possession is with home", () => {

@@ -1,6 +1,6 @@
-import MatchContextProvider, { useMatchContext } from '../../pages/match/context/MatchContext';
+import MatchContextProvider, { useMatchContext } from '../../pages/tournament/[tournamentId]/match/context/MatchContext';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Timer from '../../pages/match/components/Timer';
+import Timer from '../../pages/tournament/[tournamentId]/match/components/Timer';
 import '@testing-library/jest-dom';
 
 describe("Given a user views the timer component", () => {

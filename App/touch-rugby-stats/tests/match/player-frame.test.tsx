@@ -1,7 +1,7 @@
-import MatchContextProvider, { useMatchContext } from '../../pages/match/context/MatchContext';
+import MatchContextProvider, { useMatchContext } from '../../pages/tournament/[tournamentId]/match/context/MatchContext';
 import { render, screen, fireEvent } from '@testing-library/react';
-import PlayerFrame from '../../pages/match/components/Frames/PlayerFrame/index';
-import { IMatchContext } from '../../pages/match/context/IMatchContext';
+import PlayerFrame from '../../pages/tournament/[tournamentId]/match/components/Frames/PlayerFrame/index';
+import { IMatchContext } from '../../pages/tournament/[tournamentId]/match/context/IMatchContext';
 
 describe("Given a user views the players component", () => {
     describe("when the user clicks a home player", () => {

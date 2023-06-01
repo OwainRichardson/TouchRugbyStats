@@ -1,16 +1,18 @@
-import Timer from '../../../components/Timer';
-import MatchContainer from '../../../components/MatchContainer';
-import Teams from '../../../components/Teams';
-import MatchContextProvider from '../../../context/MatchContext'; 
+import Timer from '../../../../../components/Timer';
+import MatchContainer from '../../../../../components/MatchContainer';
+import Teams from '../../../../../components/Teams';
+import MatchContextProvider from '../../../../../context/MatchContext'; 
 import { useRouter } from "next/router";
 import { useQuery, gql } from "@apollo/client";
 
 function Match() {
   const router = useRouter();
   const matchId = router.query.matchId;
+  const tournamentId = router.query.tournamentId;
 
   const getMatch = gql`
-  query getMatch($matchId: ID!) {
+  query getTournament($tournamentId: ID!, $matchId: ID!) {
+    tournament(tournamentId: $tournamentId) {
       match(matchId: $matchId) {
           homeTeam {
             name
@@ -21,18 +23,19 @@ function Match() {
           },
           awayScore
         }
-      }`;
+      }
+    }`;
 
-const {loading, error, data} = useQuery(getMatch, { variables: { matchId }})
+const {loading, error, data} = useQuery(getMatch, { variables: { matchId, tournamentId }})
 
 if (loading) return <p>Loading...</p>;
 if (error) return <p>Error: {error.message}</p>
 
 const props = {
-  homeTeam: data.match.homeTeam.name,
-  awayTeam: data.match.awayTeam.name,
+  homeTeam: data.tournament.match.homeTeam.name,
+  awayTeam: data.tournament.match.awayTeam.name,
   possession: 'home',
-  teamInPossession: data.match.homeTeam.name.toLowerCase()
+  teamInPossession: data.tournament.match.homeTeam.name.toLowerCase()
 };
 
   return (
