@@ -1,7 +1,7 @@
 import Timer from '../../../../../components/Timer';
 import MatchContainer from '../../../../../components/MatchContainer';
 import Teams from '../../../../../components/Teams';
-import MatchContextProvider from '../../../../../context/MatchContext'; 
+import MatchContextProvider, { useMatchContext } from '../../../../../context/MatchContext'; 
 import { useRouter } from "next/router";
 import { useQuery, gql } from "@apollo/client";
 
@@ -15,11 +15,15 @@ function Match() {
     tournament(tournamentId: $tournamentId) {
       match(matchId: $matchId) {
           homeTeam {
-            name
+            name,
+            backgroundColour,
+            foregroundColour
           },
           homeScore,
           awayTeam {
-            name
+            name,
+            backgroundColour,
+            foregroundColour
           },
           awayScore
         }
@@ -32,10 +36,10 @@ if (loading) return <p>Loading...</p>;
 if (error) return <p>Error: {error.message}</p>
 
 const props = {
-  homeTeam: data.tournament.match.homeTeam.name,
-  awayTeam: data.tournament.match.awayTeam.name,
   possession: 'home',
-  teamInPossession: data.tournament.match.homeTeam.name.toLowerCase()
+  teamInPossession: data.tournament.match.homeTeam.name.toLowerCase(),
+  homeTeam: data.tournament.match.homeTeam,
+  awayTeam: data.tournament.match.awayTeam
 };
 
   return (

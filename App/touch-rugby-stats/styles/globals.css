@@ -81,21 +81,6 @@ a {
   text-align: center;
 }
 
-.wildcats {
-  background-color: orange;
-  color: black;
-}
-
-.saxons {
-  background-color: blue;
-  color: white;
-}
-
-.taipans {
-  background-color: red;
-  color: white;
-}
-
 .score {
   width: 10%;
   display: inline-block;

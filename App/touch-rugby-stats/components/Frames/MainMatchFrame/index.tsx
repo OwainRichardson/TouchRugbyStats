@@ -5,23 +5,18 @@ const MainMatchFrame = () => {
 
     const { possession, setPossession, homeSets, setHomeSets, awaySets, setAwaySets,
         homeCompletedSets, setHomeCompletedSets,
-        awayCompletedSets, setAwayCompletedSets, setDisplayedFrame, matchInProgress,
-        homeTeam, awayTeam, setTeamInPossession } = useMatchContext();
+        awayCompletedSets, setAwayCompletedSets, setDisplayedFrame, matchInProgress } = useMatchContext();
         
 
     function completeSet() {
-        // const time = getTime();
-
         if (possession === 'home') {
             setHomeCompletedSets(homeCompletedSets + 1);
             setAwaySets(awaySets + 1);
             setPossession('away');
-            setTeamInPossession(awayTeam.toLowerCase());
         } else {
             setAwayCompletedSets(awayCompletedSets + 1);
             setHomeSets(homeSets + 1);
             setPossession('home');
-            setTeamInPossession(homeTeam.toLowerCase());
         }     
     }
 

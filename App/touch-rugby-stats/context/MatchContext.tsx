@@ -16,9 +16,9 @@ export const MatchContext = createContext<IMatchContext>({
     setHomeCompletedSets: () => null,
     awayCompletedSets: 0,
     setAwayCompletedSets: () => null,
-    homeTeam: 'Wildcats',
+    homeTeam: {},
     setHomeTeam: () => null,
-    awayTeam: 'Taipains',
+    awayTeam: {},
     setAwayTeam: () => null,
     minutes: '00',
     setMinutes: () => null,
@@ -33,8 +33,6 @@ export const MatchContext = createContext<IMatchContext>({
     matchLengthSeconds: 600,
     matchInProgress: false,
     setMatchInProgress: () => null,
-    teamInPossession: 'wildcats',
-    setTeamInPossession: () => null
 });
 
 export function useMatchContext() {
@@ -49,17 +47,15 @@ const MatchContextProvider = (props: any) => {
     const [awaySets, setAwaySets] = useState(0);
     const [homeCompletedSets, setHomeCompletedSets] = useState(0);
     const [awayCompletedSets, setAwayCompletedSets] = useState(0);
-    const [homeTeam, setHomeTeam] = useState(props.homeTeam ?? 'Wildcats');
-    const [awayTeam, setAwayTeam] = useState(props.awayTeam ?? 'Saxons');
+    const [homeTeam, setHomeTeam] = useState(props.homeTeam ?? {});
+    const [awayTeam, setAwayTeam] = useState(props.awayTeam ?? {});
     const [minutes, setMinutes] = useState('00');
     const [seconds, setSeconds] = useState('00');
     const [homePenalties, setHomePenalties] = useState(0);
     const [awayPenalties, setAwayPenalties] = useState(0);
     const [displayedFrame, setDisplayedFrame] = useState<'main' | 'player' | 'penalty' | 'turnover'>('main');
-    const [matchEvents, setMatchEvents] = useState([]);
     const matchLengthSeconds = 600;
     const [matchInProgress, setMatchInProgress] = useState(props.matchInProgess ?? false);
-    const [teamInPossession, setTeamInPossession] = useState(props.teamInPossession ?? 'wildcats');
     return (
          <MatchContext.Provider 
             value={{
@@ -94,8 +90,6 @@ const MatchContextProvider = (props: any) => {
                 matchLengthSeconds,
                 matchInProgress,
                 setMatchInProgress,
-                teamInPossession,
-                setTeamInPossession
             }}>
                {props.children}
          </MatchContext.Provider>

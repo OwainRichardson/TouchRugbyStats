@@ -1,3 +1,5 @@
+import { ITeamInfo } from "../types/ITeamInfo";
+
 export interface IMatchContext {
     homeScore: number;
     setHomeScore(arg: number): void;
@@ -9,10 +11,10 @@ export interface IMatchContext {
     setHomeSets(arg: number): void;
     awaySets: number;
     setAwaySets(arg: number): void;
-    homeTeam: string;
-    setHomeTeam(arg: string): void;
-    awayTeam: string;
-    setAwayTeam(arg: string): void;
+    homeTeam: ITeamInfo;
+    setHomeTeam(arg: ITeamInfo): void;
+    awayTeam: ITeamInfo;
+    setAwayTeam(arg: ITeamInfo): void;
     homeCompletedSets: number;
     setHomeCompletedSets(arg: number): void;
     awayCompletedSets: number;
@@ -30,6 +32,4 @@ export interface IMatchContext {
     matchLengthSeconds: number;
     matchInProgress: boolean;
     setMatchInProgress(arg: boolean): void;
-    teamInPossession: string;
-    setTeamInPossession(arg: string): void;
 }

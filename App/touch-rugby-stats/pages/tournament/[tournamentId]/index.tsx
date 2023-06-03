@@ -50,6 +50,7 @@ function Tournament() {
                                 <span style={{backgroundColor: match.awayTeam.backgroundColour, color: match.awayTeam.foregroundColour}}>
                                     {match.awayTeam.name}
                                 </span>
+                                <a href={`/tournament/${tournamentId}/match/${match.id}`}>View</a>
                             </div>
                         )
                     })
