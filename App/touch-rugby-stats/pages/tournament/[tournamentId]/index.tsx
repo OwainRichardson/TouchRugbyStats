@@ -1,6 +1,7 @@
 import { useQuery, gql } from "@apollo/client";
 import { useRouter } from "next/router";
-
+import CardList from "../../../components/CardList";
+import { ICard } from "../../../types/ICard";
 
 function Tournament() {
 
@@ -34,27 +35,21 @@ function Tournament() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>
 
+    function mapToCards(matches: any) : ICard[] {
+        const cards = matches.map((match: any) => {
+            return {
+                label: `${match.homeTeam.name} vs ${match.awayTeam.name}`,
+                link: `/tournament/${tournamentId}/match/${match.id}`
+            };
+        });
+
+        return cards;
+    }
+
       return (
         <>
             <p>{data.tournament.name}</p>
-                {
-                    data.tournament.matches.map((match: any) => {
-                        return (
-                            <div key={match.id}>
-                                <span style={{backgroundColor: match.homeTeam.backgroundColour, color: match.homeTeam.foregroundColour}}>
-                                    {match.homeTeam.name}
-                                </span>
-                                {' '}{match.homeScore}
-                                {' '}vs{' '}
-                                {match.awayScore} {' '}
-                                <span style={{backgroundColor: match.awayTeam.backgroundColour, color: match.awayTeam.foregroundColour}}>
-                                    {match.awayTeam.name}
-                                </span>
-                                <a href={`/tournament/${tournamentId}/match/${match.id}`}>View</a>
-                            </div>
-                        )
-                    })
-                }
+            <CardList cards={mapToCards(data.tournament.matches)} />
         </>
       );
     }

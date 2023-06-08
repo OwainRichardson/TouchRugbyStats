@@ -1,4 +1,6 @@
 import { useQuery, gql } from "@apollo/client";
+import { ICard } from "../../types/ICard";
+import CardList from "../../components/CardList";
 
 function Tournaments() {
 
@@ -15,24 +17,23 @@ function Tournaments() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>
 
+    function mapToCards(tournaments: any) : ICard[] {
+        const cards = tournaments.map((tournament: any) => {
+            return {
+                label: tournament.name,
+                link: `/tournament/${tournament.id}`
+            };
+        });
+
+        return cards;
+    }
+
     return (
-        <div className="App">
-            <header className="App-header">
-            </header>
-            <div>
+            <>
                 <div>Tournaments</div>
-                    {
-                        data.tournaments.map((tournament: any, _: any) => {
-                            return (
-                                <>
-                                    <a href={`/tournament/${tournament.id}`} key={tournament.id}>{tournament.name}</a>
-                                </>
-                            )
-                        })
-                    }
-            </div>
-        </div>
-    );
+                <CardList cards={mapToCards(data.tournaments)} />
+            </>
+        );
     }
     
     export default Tournaments;
