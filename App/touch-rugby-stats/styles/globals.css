@@ -173,3 +173,39 @@ a {
   width: 3px;
   position: absolute;
 }
+
+/* CARDS */
+.card-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+}
+
+.card {
+  height: 250px;
+  width: 25%;
+  padding: 30px;
+}
+
+.card-inner {
+  background-color: greenyellow;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.card-inner__image {
+  height: 60%;
+  background-color: #E0E0E0;
+  background-image: url("../images/default.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.card-inner__label {
+  height: 40%;
+  text-align: center;
+  padding-top: 26px;
+}

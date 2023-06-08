@@ -17,7 +17,7 @@ namespace TouchRugbyStats.Services
             return _touchRugbyStatsContext.Tournaments
                         .Select(tournament => new TournamentInfo
                         {
-                            Id = tournamentId,
+                            Id = tournament.Id,
                             Name = tournament.Name
                         })
                         .Single(tourament => tourament.Id == tournamentId);

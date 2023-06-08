@@ -3,11 +3,15 @@ import Card from "./Card";
 
 const CardList = (props: any) => {
     return (
-        props.cards.map((card: ICard) => {
-            return (
-                <Card card={card} />
-            );
-        })
+        <div className="card-wrapper">
+            {
+                props.cards.map((card: ICard) => {
+                    return (
+                        <Card card={card} />
+                    );
+                })
+            }
+        </div>
     );
 };
 
