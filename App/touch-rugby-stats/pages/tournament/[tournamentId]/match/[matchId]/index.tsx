@@ -43,14 +43,12 @@ const props = {
 };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <MatchContextProvider {...props}>
-          <Timer />
-          <Teams />
-          <MatchContainer />  
-        </MatchContextProvider>
-      </header>
+    <div className="matchContainer">
+      <MatchContextProvider {...props}>
+        <Timer />
+        <Teams />
+        <MatchContainer />  
+      </MatchContextProvider>
     </div>
   );
 }

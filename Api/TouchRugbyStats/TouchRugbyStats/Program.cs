@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TouchRugbyStats.Contexts;
+using TouchRugbyStats.GraqhQL;
 using TouchRugbyStats.Models.GraqhQL;
 using TouchRugbyStats.Services;
 using TouchRugbyStats.Services.Services;
@@ -22,6 +23,7 @@ builder.Services.AddScoped<TournamentService>();
 
 builder.Services.AddGraphQLServer()
             .AddQueryType<Query>()
+            .AddMutationType<Mutations>()
             .AddFiltering();
 
 builder.Services.AddCors(options =>

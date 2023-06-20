@@ -12,7 +12,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
 
     <ApolloProvider client={client}>
-      <Component {...pageProps} />
+      <div className="container">
+        <Component {...pageProps} />
+      </div>
     </ApolloProvider>
   );
 }

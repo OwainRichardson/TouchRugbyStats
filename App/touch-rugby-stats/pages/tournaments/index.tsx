@@ -30,7 +30,7 @@ function Tournaments() {
 
     return (
             <>
-                <div>Tournaments</div>
+                <h2>Tournaments</h2>
                 <CardList cards={mapToCards(data.tournaments)} />
             </>
         );

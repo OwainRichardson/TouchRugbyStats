@@ -48,7 +48,7 @@ function Tournament() {
 
       return (
         <>
-            <p>{data.tournament.name}</p>
+            <h2>{data.tournament.name}</h2>
             <CardList cards={mapToCards(data.tournament.matches)} />
         </>
       );
