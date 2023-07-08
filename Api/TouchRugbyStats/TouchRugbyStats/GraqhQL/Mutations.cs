@@ -1,19 +1,14 @@
-﻿using System.Reflection.Metadata.Ecma335;
-using TouchRugbyStats.Contexts.Entities;
+﻿using TouchRugbyStats.Services;
 
 namespace TouchRugbyStats.GraqhQL
 {
     public class Mutations
     {
-        //ToDo: remove entity from mutation and only pass through what we would have in FE
-        public Task<MatchEvent> AddMatchEvent(MatchEvent matchEvent)
+        public async Task<Event> AddMatchEvent(Event matchEvent, [Service] MatchService matchService)
         {
-            return Task.FromResult(matchEvent);
-        }
+            await matchService.AddMatchEvent(matchEvent);
 
-        public Task<bool> UpdateScore(MatchEvent matchEvent)
-        {
-            return Task.FromResult(true);
+            return matchEvent;
         }
     }
 }

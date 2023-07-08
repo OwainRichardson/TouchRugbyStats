@@ -13,5 +13,6 @@ namespace TouchRugbyStats.Contexts
         public DbSet<Match> Matches{ get; set; }
         public DbSet<Tournament> Tournaments { get; set; }
         public DbSet<Team> Teams { get; set; }
+        public DbSet<MatchEvent> MatchEvents { get; set; }
     }
 }

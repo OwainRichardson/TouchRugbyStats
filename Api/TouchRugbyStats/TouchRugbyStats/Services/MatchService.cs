@@ -44,5 +44,31 @@ namespace TouchRugbyStats.Services
                         })
                         .ToList();
         }
+
+        public async Task AddMatchEvent(Event matchEvent)
+        {
+            MatchInfo match = GetMatch(matchEvent.MatchId);
+
+            Guid team;
+            if (matchEvent.Team == "home")
+            {
+                team = match.HomeTeamId;
+            }
+            else
+            {
+                team = match.AwayTeamId;
+            }    
+
+            await _touchRugbyStatsContext.MatchEvents.AddAsync(new MatchEvent
+            {
+                Id = Guid.NewGuid(),
+                Event = matchEvent.EventName,
+                MatchId = matchEvent.MatchId,
+                TeamId = team,
+                Timestamp = matchEvent.Timestamp
+            });
+
+            await _touchRugbyStatsContext.SaveChangesAsync();
+        }
     }
 }
