@@ -1,10 +1,15 @@
 import MatchButton from '../../MatchButton';
 import { useMatchContext } from '../../../context/MatchContext';
 import { turnovers } from './turnovers';
-
+import { SaveMatchEventMutation, ExecuteMutation } from "../../../services/MatchEventService";
+import { useMutation } from "@apollo/client";
+import { useRouter } from "next/router";
 const TurnoverFrame = () => {
-    const { homeSets, setHomeSets, awaySets, setAwaySets, possession, setPossession, setDisplayedFrame,
-        homeTeam, awayTeam } = useMatchContext();
+    const { homeSets, setHomeSets, awaySets, setAwaySets, possession, setPossession, setDisplayedFrame, minutes, seconds } = useMatchContext();
+
+    const [createMatchEvent, { data, loading, error }] = useMutation(SaveMatchEventMutation);
+    const router = useRouter();
+    const matchId = router.query.matchId as string;
 
     let turnoverType = '';
 
@@ -32,6 +37,16 @@ const TurnoverFrame = () => {
         turnoverType = '';
 
         setDisplayedFrame('main');
+
+        saveMatchevent(getTime());
+    }
+
+    function getTime() {
+        return (parseInt(minutes) * 60) + parseInt(seconds);
+    }
+
+    function saveMatchevent(timestamp: Number) {
+        ExecuteMutation(createMatchEvent, timestamp, matchId, possession, 'turnover');
     }
 
     return (

@@ -1,25 +1,19 @@
 import MatchButton from '../../MatchButton';
 import { useMatchContext } from '../../../context/MatchContext';
 import { homePlayers, awayPlayers } from './Players';
-import { useMutation, gql } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
+import { SaveMatchEventMutation, ExecuteMutation } from "../../../services/MatchEventService";
 
 function PlayerFrame() {
 
     const router = useRouter();
-    const matchId = router.query.matchId;
+    const matchId = router.query.matchId as string;
     const { homeScore, setHomeScore, awayScore, setAwayScore, possession,
                 setPossession, homeSets, setHomeSets, awaySets, setAwaySets,
                 setDisplayedFrame, minutes, seconds } = useMatchContext();
 
-    const saveMatchEventMutation = gql`
-        mutation saveMatchEvent($timestamp: Int!, $matchId: ID!, $team: String!) {
-            addMatchEvent(matchEvent: { timestamp: $timestamp, matchId: $matchId, eventName: "try", team: $team}) {
-                timestamp
-            }
-    }`;
-
-    const [executeMutation, { data, loading, error }] = useMutation(saveMatchEventMutation);
+    const [createMatchEvent, { data, loading, error }] = useMutation(SaveMatchEventMutation);
 
     function homePlayerSelected() {
         setHomeScore(homeScore + 1);
@@ -44,7 +38,7 @@ function PlayerFrame() {
     }
 
     function saveMatchevent(timestamp: Number) {
-        executeMutation({ variables: { timestamp, matchId, team: possession }});
+        ExecuteMutation(createMatchEvent, timestamp, matchId, possession, 'try');
     }
     
     if (possession === 'home') {

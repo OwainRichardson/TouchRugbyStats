@@ -1,11 +1,18 @@
 import MatchButton from '../../MatchButton';
 import { useMatchContext } from '../../../context/MatchContext';
 import { penalties } from './penalties';
+import { SaveMatchEventMutation, ExecuteMutation } from "../../../services/MatchEventService";
+import { useMutation } from "@apollo/client";
+import { useRouter } from "next/router";
 
 const PenaltyFrame = () => {
     const { homeSets, setHomeSets, awaySets, setAwaySets, possession, setDisplayedFrame,
-                homePenalties, setHomePenalties, awayPenalties, setAwayPenalties } = useMatchContext();
+                homePenalties, setHomePenalties, awayPenalties, setAwayPenalties,
+                minutes, seconds } = useMatchContext();
 
+    const [createMatchEvent, { data, loading, error }] = useMutation(SaveMatchEventMutation);
+    const router = useRouter();
+    const matchId = router.query.matchId as string;
     let penaltyType = '';
 
     function showPitchArea(event: any) {
@@ -19,8 +26,6 @@ const PenaltyFrame = () => {
     }
 
     function handlePenalty() {
-        // const time = getTime();
-
         if (possession === 'home') {
             setHomeSets(homeSets + 1);
             setAwayPenalties(awayPenalties + 1);
@@ -29,9 +34,17 @@ const PenaltyFrame = () => {
             setHomePenalties(homePenalties + 1);
         }
 
-        penaltyType = '';
-
         setDisplayedFrame('main');
+
+        saveMatchevent(getTime());
+    }
+
+    function getTime() {
+        return (parseInt(minutes) * 60) + parseInt(seconds);
+    }
+
+    function saveMatchevent(timestamp: Number) {
+        ExecuteMutation(createMatchEvent, timestamp, matchId, possession, 'penalty');
     }
 
     return (
