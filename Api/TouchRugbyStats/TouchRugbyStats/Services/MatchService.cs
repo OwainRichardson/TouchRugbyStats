@@ -1,8 +1,8 @@
-﻿using TouchRugbyStats.Contexts;
-using TouchRugbyStats.Contexts.Entities;
-using TouchRugbyStats.GraqhQL;
+﻿using TouchRugbyStats.Database.Contexts;
+using TouchRugbyStats.Database.Contexts.Entities;
+using TouchRugbyStats.GraqhQL.Models;
 
-namespace TouchRugbyStats.Services
+namespace TouchRugbyStats.GraphQL.Services
 {
     public class MatchService
     {

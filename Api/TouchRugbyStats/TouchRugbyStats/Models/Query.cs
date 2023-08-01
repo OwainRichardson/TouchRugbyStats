@@ -1,7 +1,6 @@
-﻿using TouchRugbyStats.GraqhQL;
-using TouchRugbyStats.Services;
+﻿using TouchRugbyStats.GraphQL.Services;
 
-namespace TouchRugbyStats.Models.GraqhQL
+namespace TouchRugbyStats.GraqhQL.Models
 {
     public class Query
     {

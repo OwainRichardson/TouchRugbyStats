@@ -1,9 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using TouchRugbyStats.Contexts;
+using TouchRugbyStats.Database.Contexts;
+using TouchRugbyStats.GraphQL.Services;
 using TouchRugbyStats.GraqhQL;
-using TouchRugbyStats.Models.GraqhQL;
-using TouchRugbyStats.Services;
-using TouchRugbyStats.Services.Services;
+using TouchRugbyStats.GraqhQL.Models;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -20,6 +19,8 @@ builder.Services.AddDbContext<TouchRugbyStatsContext>(options => options.UseSqlS
 builder.Services.AddScoped<TeamService>();
 builder.Services.AddScoped<MatchService>();
 builder.Services.AddScoped<TournamentService>();
+
+builder.Services.AddSingleton<HttpClient>();
 
 builder.Services.AddGraphQLServer()
             .AddQueryType<Query>()

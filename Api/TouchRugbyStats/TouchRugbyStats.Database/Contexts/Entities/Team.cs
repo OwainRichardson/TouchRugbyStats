@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TouchRugbyStats.Contexts.Entities
+namespace TouchRugbyStats.Database.Contexts.Entities
 {
     public class Team
     {

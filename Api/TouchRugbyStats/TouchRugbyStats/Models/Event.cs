@@ -1,4 +1,4 @@
-﻿namespace TouchRugbyStats.GraqhQL
+﻿namespace TouchRugbyStats.GraqhQL.Models
 {
     public class Event
     {

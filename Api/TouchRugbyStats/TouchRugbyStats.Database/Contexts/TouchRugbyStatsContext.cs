@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TouchRugbyStats.Contexts.Entities;
+using TouchRugbyStats.Database.Contexts.Entities;
 
-namespace TouchRugbyStats.Contexts
+namespace TouchRugbyStats.Database.Contexts
 {
     public class TouchRugbyStatsContext : DbContext
     {

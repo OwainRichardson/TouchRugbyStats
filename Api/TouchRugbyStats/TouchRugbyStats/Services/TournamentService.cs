@@ -1,7 +1,7 @@
-﻿using TouchRugbyStats.Contexts;
-using TouchRugbyStats.GraqhQL;
+﻿using TouchRugbyStats.Database.Contexts;
+using TouchRugbyStats.GraqhQL.Models;
 
-namespace TouchRugbyStats.Services
+namespace TouchRugbyStats.GraphQL.Services
 {
     public class TournamentService
     {
